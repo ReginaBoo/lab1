@@ -1,5 +1,3 @@
-"""Реализация задач на NumPy."""
-
 import numpy as np
 from grader_contracts.numpy_tasks import (
     BinarizeInput, ChessInput, EllipseInput, MatrixInput, MatrixStatistics,
@@ -151,9 +149,6 @@ if __name__ == "__main__":
     print("Тестирование sum_prod...")
     mats = np.array([[[1, 0], [0, 1]], [[2, 0], [0, 2]]])
     vecs = np.array([[[1], [2]], [[3], [4]]])
-    # A1*v1 = [[1, 0], [0, 1]] @ [[1], [2]] = [[1], [2]]
-    # A2*v2 = [[2, 0], [0, 2]] @ [[3], [4]] = [[6], [8]]
-    # Сумма = [[7], [10]]
     res_sum_prod = sum_prod(MatrixVectorBatchInput(mats, vecs))
     np.testing.assert_array_equal(res_sum_prod, [[7], [10]])
     assert res_sum_prod.shape == (2, 1)
